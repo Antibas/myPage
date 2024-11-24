@@ -1,7 +1,20 @@
 :root {
     --small-distance: 1rem;
     --med-distance: 2rem;
-    --color-1: #18181b;
+    --large-distance: 3rem;
+    --radius: 2rem;
+    /* --color-1: #18181b;
+    --color-2: #00153C;
+    --color-3: #0057FF;
+    --color-4: #F3F4F8;
+    --color-5: #e5e7eb; */
+    --background-color: #fafafa;
+    --header-color: #27272A;
+    --header-text-color: #fafafa;
+    --text-color: #18181B;
+    --muted-color: #71717A;
+    --container-color: #3F3F46;
+    --card-color: #71717A;
     --transition-time: 0.2s;
     --padding-x: 18%;
     --padding-y: 2%;
@@ -21,7 +34,8 @@
     outline: none;
     border: none;
     box-sizing: border-box;
-    background-color: var(--color-1);
+    background-color: var(--background-color);
+    color: var(--text-color)
 }
 
 body {
@@ -34,52 +48,50 @@ img {
 }
 
 h1 {
-    color: #fff;
     font-size: 3rem;
     font-weight: 700;
+    background-color: var(--header-color);
+    color: var(--header-text-color);
 }
 
 h2 {
-    color: #fff;
     font-size: 2.5rem;
     font-weight: 500;
+    background-color: var(--header-color);
+    color: var(--header-text-color);
 }
 
 h3 {
-    color: #fff;
     font-size: 2rem;
     font-weight: 500;
 }
 
 h4 {
-    color: #fff;
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: 700;
+    margin-bottom: -1rem;
 }
 
 h5 {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-
-h6 {
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 200;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 p {
-    color: #fff;
     font-size: 1.2rem;
-    /* max-width: 1200px;
-    margin: auto; */
+    max-width: 1200px;
+    margin: auto; 
 }
 
 header {
     display: flex;
     justify-content: space-between;
     margin-bottom: var(--med-distance);
+    background-color: var(--header-color);
+    color: var(--header-text-color);
+    border-radius: var(--radius);
+    padding: var(--small-distance);;
 }
 
 .language-btn{
@@ -93,7 +105,7 @@ header {
 }
 
 .language-btn:hover {
-    box-shadow: 0 0 .2rem .1rem #fff;
+    box-shadow: 0 0 .2rem .1rem var(--color-4);
     z-index: 100;
     transition: var(--transition-time) ease-in-out;
 }
@@ -101,6 +113,8 @@ header {
 .text-header {
     text-align: center;
     align-items: center;
+    background-color: var(--header-color);
+    color: var(--header-text-color);
 }
 
 header img {
@@ -111,28 +125,46 @@ header img {
 
 header nav {
     margin-top: var(--med-distance);
+    background-color: var(--header-color);
+    color: var(--header-text-color);
  }
 
 header .btn-group {
     margin-top: var(--small-distance);
+    background-color: var(--header-color);
+    color: var(--header-text-color);
 }
 
 a + a {
     margin-left: 0.6rem;
 }
 
+a {
+    background-color: var(--header-color);
+}
+
+
 a i {
-    color: #fff;
+    background-color: var(--header-color);
+    color: var(--header-text-color);
 }
 
 a i:hover, a.nav-link:hover {
-    color: #ccc;
+    color: var(--muted-color);
     transition: var(--transition-time) ease-in-out;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 a.nav-link {
-    font-size: small;
-    /* color: var(--color-4); */
+    color: var(--text-color);
+    font-size: 1.2rem;
+    background-color: var(--background-color);
 }
 
 /* .nav-pills .nav-link.active {
@@ -144,16 +176,36 @@ a.nav-link {
 }
 
 .content-container {
+    display: flex;
     justify-content: space-between;
-    margin-top: var(--med-distance);
+    margin-top: var(--large-distance);
     text-align: center;
+    /* width: 600px; */
+    padding: var(--small-distance);
+    box-shadow: 2px 1px .5rem var(--muted-color);
+    border-top: 1px solid var(--text-color);
+    border-radius: .2rem .2rem 1rem 1rem;
 }
 
 .content-container p {
     width: 600px;
     margin: auto;
+    background-color: var(--color-2);
+    /* border-radius: var(--radius); */
+    /* box-shadow: 2px 2px .5rem var(--container-color); */
+}
+
+.text-muted {
+    color: var(--muted-color);
+    font-size: 1rem;
 }
 
 .content-card {
-    background-color: none;
+    max-width: 1000px;
+}
+
+.dateplace {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
 }
