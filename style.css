@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
     --small-distance: 1rem;
     --med-distance: 2rem;
@@ -35,10 +36,11 @@
     border: none;
     box-sizing: border-box;
     background-color: var(--background-color);
-    color: var(--text-color)
+    color: var(--text-color);
+    font-family: 'Kanit', sans-serif;
 }
 
-body {
+body:not(#cookies-popup) {
     padding: var(--padding-y) var(--padding-x) var(--padding-y) var(--padding-x);
 }
 
@@ -56,32 +58,38 @@ h1 {
 
 h2 {
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 400;
     background-color: var(--header-color);
     color: var(--header-text-color);
 }
 
 h3 {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 h4 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: -1rem;
 }
 
 h5 {
-    font-size: 1.3rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 500;
     margin-bottom: 1rem;
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: .9rem;
     max-width: 1200px;
     margin: auto; 
+}
+
+.exp-description {
+    display: none;
+    border-top: 1px solid var(--text-color);
+    transition: transform 2s;
 }
 
 header {
@@ -91,7 +99,8 @@ header {
     background-color: var(--header-color);
     color: var(--header-text-color);
     border-radius: var(--radius);
-    padding: var(--small-distance);;
+    padding: var(--small-distance);
+    /* padding: var(--padding-y) var(--padding-x) var(--padding-y) var(--padding-x); */
 }
 
 .language-btn{
@@ -139,31 +148,43 @@ a + a {
     margin-left: 0.6rem;
 }
 
-a {
-    background-color: var(--header-color);
+button.btn-link {
+    font-size: .9rem;
+    padding: 0;
+    color: var(--container-color);
 }
 
+button.btn-link:hover {
+    color: var(--muted-color);
+    transition: var(--transition-time) ease-in-out;
+}
+
+nav a {
+    background-color: var(--header-color);
+}
 
 a i {
     background-color: var(--header-color);
     color: var(--header-text-color);
 }
 
-a i:hover, a.nav-link:hover {
+a i:hover, .nav-links button:hover {
     color: var(--muted-color);
+    /* border-bottom: 1px solid var(--text-color); */
     transition: var(--transition-time) ease-in-out;
-    border-bottom: 1px solid var(--text-color);
 }
 
 .nav-links {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    /* border-left: 1px solid var(--text-color); */
 }
 
-a.nav-link {
+.nav-links button {
+    font-size: 1.5rem;
+    font-weight: 500;
     color: var(--text-color);
-    font-size: 1.2rem;
     background-color: var(--background-color);
 }
 
@@ -180,7 +201,7 @@ a.nav-link {
     justify-content: space-between;
     margin-top: var(--large-distance);
     text-align: center;
-    /* width: 600px; */
+    /* max-width: 1200px; */
     padding: var(--small-distance);
     box-shadow: 2px 1px .5rem var(--muted-color);
     border-top: 1px solid var(--text-color);
@@ -190,14 +211,12 @@ a.nav-link {
 .content-container p {
     width: 600px;
     margin: auto;
-    background-color: var(--color-2);
     /* border-radius: var(--radius); */
     /* box-shadow: 2px 2px .5rem var(--container-color); */
 }
 
 .text-muted {
     color: var(--muted-color);
-    font-size: 1rem;
 }
 
 .content-card {
@@ -208,4 +227,133 @@ a.nav-link {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.text-small {
+    font-size: 0.7rem;
+}
+
+footer {
+    margin-top: var(--large-distance);
+}
+
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+/* .open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  } */
+  
+.popup-header {
+
+}
+
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    z-index: 9;
+    overflow-y: scroll;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    /* max-width: 600px; */
+    height: 600px;
+    padding: 10px;
+    background-color: var(--background-color);
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text],  .form-container input[type=email]{
+    width: 100%;
+    padding: .7rem;
+    font-size: 1.2rem;
+    /* margin: 5px 0 22px 0; */
+    /* margin: .5rem 0 2rem 0; */
+    border: none;
+    /* background: #f1f1f1; */
+    /* border-radius: 1rem; */
+    border-bottom: 1px solid var(--text-color);
+  }
+
+  .form-container textarea{
+    width: 100%;
+    padding: .5rem;
+    resize: vertical;
+    font-size: 1.2rem;
+    /* margin: 5px 0 22px 0; */
+    /* margin: .5rem 0 2rem 0; */
+    border: none;
+    /* background: #f1f1f1; */
+    /* border-radius: 1rem; */
+    border-bottom: 1px solid var(--text-color);
+  }
+  
+  /* When the inputs get focus, do something */
+  /* .form-container input[type=text]:focus, .form-container input[type=email]:focus {
+    background-color: #ddd;
+    outline: none;
+  } */
+  
+  /* Set a style for the submit/login button */
+  .send {
+    background-color: #04AA6D;
+    color: var(--text-color);
+    padding: 16px 20px;
+    /* border: none; */
+    cursor: pointer;
+    border-radius: var(--radius);
+    width: 50%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    opacity: 0.8;
+  }
+  
+  .send:hover {
+    background-color: #139e6b;
+    color: var(--background-color);
+    transition: var(--transition-time) ease-in-out;
+  }
+  /* Add a red background color to the cancel button */
+  button.cancel {
+    background-color: crimson;
+    width: auto;
+    padding: 1rem;
+    border-radius: 100%;
+  }
+  
+  /* Add some hover effects to buttons */
+  /* .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  } */
+
+#cookies-popup {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 2px;
+    width: 100%;
+    height: 240px;
+    z-index: 9;
+    padding: var(--small-distance);
+    text-align: center;
+    box-shadow: 2px 1px .5rem var(--muted-color);
+    border-top: 1px solid var(--text-color);
+    border-radius: .2rem .2rem 1rem 1rem;
 }
