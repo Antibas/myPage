@@ -1,0 +1,159 @@
+:root {
+    --small-distance: 1rem;
+    --med-distance: 2rem;
+    --color-1: #18181b;
+    --transition-time: 0.2s;
+    --padding-x: 18%;
+    --padding-y: 2%;
+}
+
+/* @font-face {
+    font-family: 'Matrix';
+    src: url('matrix.ttf')  format('truetype'); 
+} */
+
+    /* background-image: url("code2.jpg"); */
+    /* background-image:  linear-gradient(var(--color-1), var(--color-2), var(--color-3)); */
+    /* color: var(--color-4); */
+    /* font-family: 'Matrix'; */
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+* {
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    background-color: var(--color-1);
+}
+
+body {
+    padding: var(--padding-y) var(--padding-x) var(--padding-y) var(--padding-x);
+}
+
+img {
+    width: 100%;
+    display: flex;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+h3 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+h4 {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+h5 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+h6 {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+p {
+    color: #fff;
+    font-size: 1.2rem;
+    /* max-width: 1200px;
+    margin: auto; */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--med-distance);
+}
+
+.language-btn{
+    padding: 0;
+    border-radius: 100%;
+}
+
+.language-btn img{
+   width: 1.5rem;
+   height: 1.5rem;
+}
+
+.language-btn:hover {
+    box-shadow: 0 0 .2rem .1rem #fff;
+    z-index: 100;
+    transition: var(--transition-time) ease-in-out;
+}
+
+.text-header {
+    text-align: center;
+    align-items: center;
+}
+
+header img {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 100%;
+}
+
+header nav {
+    margin-top: var(--med-distance);
+ }
+
+header .btn-group {
+    margin-top: var(--small-distance);
+}
+
+a + a {
+    margin-left: 0.6rem;
+}
+
+a i {
+    color: #fff;
+}
+
+a i:hover, a.nav-link:hover {
+    color: #ccc;
+    transition: var(--transition-time) ease-in-out;
+}
+
+a.nav-link {
+    font-size: small;
+    /* color: var(--color-4); */
+}
+
+/* .nav-pills .nav-link.active {
+} */
+
+.left {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.content-container {
+    justify-content: space-between;
+    margin-top: var(--med-distance);
+    text-align: center;
+}
+
+.content-container p {
+    width: 600px;
+    margin: auto;
+}
+
+.content-card {
+    background-color: none;
+}
