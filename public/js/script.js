@@ -35,3 +35,9 @@ function loadDesc(id){
     }
 }
 
+function acceptCookies(cookies){
+    if(cookies){
+        // TODO code that holds cookies
+    }
+    document.getElementById('cookies-popup').style.display = 'none';
+}

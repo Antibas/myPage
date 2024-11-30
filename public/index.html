@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Panagiotis Antivasis</title>
 </head>
-<body>
+<body onload="document.getElementById('cookies-popup').classList.toggle('active')">
     <header>
         <div class="text-header">
             <h1>Panagiotis (Panos) Antivasis</h1>
@@ -171,30 +171,26 @@
                 <p><i class="fas fa-envelope"></i> antivasisp@gmail.com</p>
                 <br>
                 <p>Bored copying & pasting my email?</p>
-                <button type="button" class="btn-link" onclick="document.getElementById('myForm').style.display = 'block'">Send me an email directly.</button>
+                <a href="/send_email"class="btn-link">Send me an email directly.</a>
+                <!-- <button type="button" class="btn-link" onclick="document.getElementById('myForm').style.display = 'block'">Send me an email directly.</button> -->
             </div>
         </div>
     </main>
-    <div class="form-popup content-container" id="myForm">
+    <!-- <div class="form-popup content-container" id="myForm">
         <form action="" class="form-container">
             <div class="popup-header">
                 <button type="button" class="cancel" onclick="document.getElementById('myForm').style.display = 'none'">X</button>
                 <h3>Send Email</h3>
             </div>
       
-          <!-- <label for="email">Email Address</label> -->
           <input type="email" placeholder="Email address" name="email" required>
       
-          <!-- <label for="subj">Subject</label> -->
           <input type="text" placeholder="Subject" name="subj" required>
 
-          <!-- <label for="msg">Message</label> -->
           <textarea name="msg" placeholder="Message" rows="7" required></textarea>
-          <!-- <input type="text" placeholder="Enter email subject" name="msg" required> -->
-          <!-- <button type="submit" class="send">Send</button> -->
            <input type="submit" value="Send" class="primary">
         </form>
-      </div>
+    </div> -->
     <!-- <nav class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="nav-link active" id="nav-about-tab" data-bs-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="true">About me</a>
         <a class="nav-link" id="nav-exp-tab" data-bs-toggle="tab" href="#nav-exp" role="tab" aria-controls="nav-exp" aria-selected="false">Experience</a>
@@ -219,8 +215,8 @@
         <h3>Accept Cookies</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptatem molestiae, quaerat facere quo soluta perferendis vero, neque assumenda nulla at, harum esse consequuntur veniam voluptatibus distinctio? Sunt, quod blanditiis!</p>
         <br>
-        <button type="button" onclick="document.getElementById('cookies-popup').style.display = 'none'" class="secondary">Accept</button>
-        <button type="button" onclick="document.getElementById('cookies-popup').style.display = 'none'" class="cancel">Reject</button>
+        <button type="button" onclick="acceptCookies(true)" class="secondary">Accept</button>
+        <button type="button" onclick="acceptCookies(false)" class="cancel">Reject</button>
     </div>
     <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
       <script src="js/script.js"></script>
