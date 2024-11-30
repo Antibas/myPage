@@ -4,11 +4,7 @@
     --med-distance: 2rem;
     --large-distance: 3rem;
     --radius: 2rem;
-    /* --color-1: #18181b;
-    --color-2: #00153C;
-    --color-3: #0057FF;
-    --color-4: #F3F4F8;
-    --color-5: #e5e7eb; */
+    --paragraph-width: 1200px;
     --background-color: #fafafa;
     --header-color: #27272A;
     --header-text-color: #fafafa;
@@ -82,14 +78,25 @@ h5 {
 
 p {
     font-size: .9rem;
-    max-width: 1200px;
+    max-width: var(--paragraph-width);
     margin: auto; 
 }
 
 .exp-description {
-    display: none;
+    /* border-top: 0px solid var(--text-color); */
+    /* opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease; */
+    max-height: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-height 1s ease, max-width 1s ease;
+}
+
+.exp-description.active {
     border-top: 1px solid var(--text-color);
-    transition: transform 2s;
+    max-height: 200px;
+    max-width: var(--paragraph-width);
 }
 
 header {
@@ -114,7 +121,7 @@ header {
 }
 
 .language-btn:hover {
-    box-shadow: 0 0 .2rem .1rem var(--color-4);
+    box-shadow: 0 0 .2rem .1rem var(--background-color);
     z-index: 100;
     transition: var(--transition-time) ease-in-out;
 }
@@ -201,7 +208,7 @@ a i:hover, .nav-links button:hover {
     justify-content: space-between;
     margin-top: var(--large-distance);
     text-align: center;
-    /* max-width: 1200px; */
+    /* max-width: var(--paragraph-width); */
     padding: var(--small-distance);
     box-shadow: 2px 1px .5rem var(--muted-color);
     border-top: 1px solid var(--text-color);
@@ -257,9 +264,9 @@ footer {
     width: 280px;
   } */
   
-.popup-header {
+/* .popup-header {
 
-}
+} */
 
   /* The popup form - hidden by default */
   .form-popup {
@@ -273,7 +280,7 @@ footer {
   
   /* Add styles to the form container */
   .form-container {
-    /* max-width: 600px; */
+    max-width: 600px;
     height: 600px;
     padding: 10px;
     background-color: var(--background-color);
@@ -312,7 +319,7 @@ footer {
   } */
   
   /* Set a style for the submit/login button */
-  .send {
+  .primary {
     background-color: #04AA6D;
     color: var(--text-color);
     padding: 16px 20px;
@@ -325,16 +332,38 @@ footer {
     opacity: 0.8;
   }
   
-  .send:hover {
+  .primary:hover {
     background-color: #139e6b;
     color: var(--background-color);
     transition: var(--transition-time) ease-in-out;
   }
   /* Add a red background color to the cancel button */
-  button.cancel {
+  .secondary {
+    background-color: #04AA6D;
+    width: auto;
+    padding: 1rem;
+    border-radius: var(--radius);
+  }
+  
+  .secondary:hover {
+    background-color: #139e6b;
+    color: var(--background-color);
+    transition: var(--transition-time) ease-in-out;
+  }
+
+  .cancel {
     background-color: crimson;
     width: auto;
     padding: 1rem;
+    border-radius: var(--radius);
+  }
+
+  .cancel:hover {
+    color: var(--background-color);
+    transition: var(--transition-time) ease-in-out;
+  }
+
+  .circled {
     border-radius: 100%;
   }
   
@@ -356,4 +385,39 @@ footer {
     box-shadow: 2px 1px .5rem var(--muted-color);
     border-top: 1px solid var(--text-color);
     border-radius: .2rem .2rem 1rem 1rem;
+}
+
+.barchart {
+    color: var(--header-color);
+    background-color: var(--header-color);
+    height: 0.5rem;
+    border-radius: var(--radius);
+    margin-top: .5rem;
+}
+
+.langchart {
+    display: flex;
+}
+
+footer {
+    display: flex;
+}
+
+@media screen and (max-width: 1200px) {
+    header {
+        display: block;
+    }
+    .content-container:not(.form-popup) {
+        display: block;
+    }
+    .content-container p {
+        width: 400px;
+        margin: auto;
+        /* border-radius: var(--radius); */
+        /* box-shadow: 2px 2px .5rem var(--container-color); */
+    }
+
+    .form-container {
+        height: 300px;
+    }
 }

@@ -23,16 +23,15 @@ function loadDesc(id){
     const expertiseDescription = document.getElementById(id);
     if(!selected){
         selected = id;
-        expertiseDescription.style.display = 'flex';
+        expertiseDescription.classList.toggle('active');//.style.display = 'flex';
     } else if (selected !== id){
-        document.getElementById(selected).style.display = 'none'
+        document.getElementById(selected).classList.toggle('active');//.style.display = 'none'
         selected = id;
-        expertiseDescription.style.display = 'flex';
-    } else if (selected !== id){
+        expertiseDescription.classList.toggle('active');
     } else {
         
         selected = null;
-        expertiseDescription.style.display = 'none';
+        expertiseDescription.classList.toggle('active');
     }
 }
 
