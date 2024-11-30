@@ -1,0 +1,63 @@
+{
+    "lang": "en",
+    "name": "Panagiotis (Panos) Antivasis",
+    "jobtitle": "Software Developer",
+    "aboutmeTitle": "About Me",
+    "aboutme": "I am an exceptionally motivated individual, deeply passionate about technology and equipped with a strong foundation in programming, software development, and signal processing. My dedication to problem-solving, coupled with a relentless pursuit of excellence, positions me as a valuable addition to any team in the field of Computer Science. With a keen eye for detail and a drive to surpass expectations, I am eager to leverage my skills and expertise to drive innovation and make a meaningful impact.",
+    "educationTitle": "Education",
+    "education": [
+        {
+            "title": "MSc in Informatics Engineering",
+            "institution": "Hellenic Mediterrenean University",
+            "time": "October 2024 - Now",
+            "description": "My undergraduate education provided me with knowledge that allowed me to put my thoughts into practice and broaden my knowledge and expertise."
+        },
+        {
+            "title": "BSc in Computer Science",
+            "institution": "University of Crete",
+            "time": "September 2016 - July 2022",
+            "description": "Became conversant with a variety of programming languages and software engineering expertise, as well as the fundamental ideas of signal processing."
+        }
+    ],
+    "experienceTitle": "Work Experience",
+    "experience": [
+        {
+            "jobtitle": "Software Developer",
+            "company": "Pasiphae Lab",
+            "location": "Heraklion, Crete, Greece",
+            "time": "October 2024 - Now",
+            "description": "Currently improving my back-end development skill sets through my work on many EU-funded projects such as Mine.io and CYBERUNITY."
+        },
+        {
+            "jobtitle": "Student Assistant - Information Management",
+            "company": "WSAudiology",
+            "location": "Lynge, Denmark",
+            "time": "October 2023 - February 2024",
+            "description": "Currently improving my back-end development skill sets through my work on many EU-funded projects such as Mine.io and CYBERUNITY. My duties consisted of:"
+        }
+    ],
+    "expertiseTitle": "Expertise",
+    "expertise": {
+        "Python": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsa laboriosam natus modi debitis enim reprehenderit libero necessitatibus rerum laborum. Error voluptate obcaecati recusandae debitis, tempore alias accusamus non sequi!",
+        "Docker": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis error aliquid tenetur fuga! In minus numquam dolorem voluptatibus ipsum distinctio culpa, tempora nisi exercitationem, quae at explicabo deleniti voluptate et!",
+        "HTML/CSS": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam ad obcaecati odio cumque doloremque non molestiae corporis officiis iusto suscipit velit vero ducimus voluptates laborum, quidem quae possimus voluptatum! Ex!",
+        "Javascript": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, quisquam deserunt. Corporis deleniti voluptate molestias sit sequi autem, minima ea quos aperiam veritatis impedit unde. Ipsum necessitatibus neque perspiciatis! Possimus.",
+        "Vue.js": "lorem",
+        "VS Code": "lorem",
+        "Git": "lorem",
+        "Java": "lorem",
+        "C": "lorem",
+        "C++": "lorem",
+        "Linux": "lorem",
+        "B Driving License": "lorem"
+    },
+    "languagesTitle": "Languages",
+    "languages": {
+        "Greek": "Greek",
+        "English": "English"
+    },
+    "interestedTitle": "Interested in me?",
+    "contactTitle": "Contact Me",
+    "contactSub": "Bored copying & pasting my email?",
+    "contactAnc": "Send me an email directly"
+}

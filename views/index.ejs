@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=<%= lang %>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
-    <title>Panagiotis Antivasis</title>
+    <title><%= name %></title>
 </head>
 <body onload="document.getElementById('cookies-popup').classList.toggle('active')">
     <header>
         <div class="text-header">
-            <h1>Panagiotis (Panos) Antivasis</h1>
-            <h2>Software Developer</h2>
+            <h1><%= name %></h1>
+            <h2><%= jobtitle %></h2>
             <nav>
-                <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/antibas/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/Antibas" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="" target="_blank"><i class="fab fa-stack-overflow"></i></a>
+                <a href="https://www.facebook.com/panajotis.andivasis" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/_antibas/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://stackoverflow.com/users/14463603/%ce%a0%ce%91%ce%9d%ce%91%ce%93%ce%99%ce%a9%ce%a4%ce%97%ce%a3-%ce%91%ce%9d%ce%a4%ce%99%ce%92%ce%91%ce%a3%ce%97%ce%a3" target="_blank"><i class="fab fa-stack-overflow"></i></a>
             </nav>
             <div class="btn-group">
                 <button type="button" class="language-btn" onclick="toggleLang()">
                     <!-- <img src="images/uk-flag.png" alt="En"> -->
-                    <img src="images/greek-flag.png" alt="lang">
+                    <img src="images/greek-flag.png" alt="lang" id="lang-img">
                 </button>
-                <!-- <button type="button" class="language-btn">
-                    <img src="images/greek-flag.png" alt="Gr" onclick="loadLang('gr')">
-                </button> -->
             </div>
         </div>
         
@@ -35,143 +32,77 @@
     </header>
      <main>
         <div class="content-container left" id="about-me">
-            <h3>About Me</h3>
+            <h3><%= aboutmeTitle %></h3>
             <div class="content-card">
-                <p>I am an exceptionally motivated individual, deeply passionate about technology and equipped with a strong foundation in programming,
-                    software development, and signal processing. My dedication to problem-solving, coupled with a relentless pursuit of excellence, 
-                    positions me as a valuable addition to any team in the field of Computer Science. With a keen eye for detail and a drive 
-                    to surpass expectations, I am eager to leverage my skills and expertise to drive innovation and make a meaningful impact.</p>
-            
+                <p><%= aboutme %></p>
             </div>
         </div>
         <div class="content-container" id="education">
-            <h3>Education</h3>
+            <h3><%= educationTitle %></h3>
             <div class="card-content-container">
+                <% for (let ed of education) {%>
                 <div class="content-card">
-                    <h4>MSc in Informatics Engineering</h4>
-                    <h5>Hellenic Mediterrenean University</h5>
-                    <p class="text-muted italic text-small">October 2024 - Now</p>
+                    <h4><%=ed["title"] %></h4>
+                    <h5><%=ed["institution"] %></h5>
+                    <p class="text-muted italic text-small"><%=ed["time"] %></p>
                     <br>
-                    <p>My undergraduate education provided me with knowledge that allowed me to put my thoughts into practice and broaden my knowledge and expertise.</p>
+                    <p><%=ed["description"] %></p>
                 </div>
-                <br><br>
-                <div class="content-card">
-                    <h4>BSc in Computer Science</h4>
-                    <h5>University of Crete</h5>
-                    <p class="text-muted italic text-small">September 2016 - July 2022</p>
-                    <br>
-                    <p>Became conversant with a variety of programming languages and software engineering expertise, as well as the fundamental ideas of signal processing.</p>
-                </div>
+                <br>
+                <% } %>
             </div>
         </div>
 
         <div class="content-container" id="experience">
-            <h3>Work Experience</h3>
+            <h3><%= experienceTitle %></h3>
             <div class="card-content-container">
-                <div class="content-card">
-                    <h4>Software Developer</h4>
-                    <h5>Pasiphae Lab</h5>
-                    <p class="text-muted text-small">Heraklion, Crete, Greece</p>
-                    <p class="text-muted italic text-small">October 2024 - Now</p>
+                <% for (let ex of experience) {%>
+                    <div class="content-card">
+                        <h4><%=ex['jobtitle'] %></h4>
+                        <h5><%=ex['company'] %></h5>
+                        <p class="text-muted text-small"><%=ex['location'] %></p>
+                        <p class="text-muted italic text-small"><%=ex['time'] %></p>
+                        <br>
+                        <p><%=ex['description'] %></p>
+                    </div>
                     <br>
-                    <p>Currently improving my back-end development 
-                        skill sets through my work on many EU-funded
-                        projects such as Mine.io and CYBERUNITY.</p>
-                </div>
-                <br>
-                <div class="content-card">
-                    <h4>Student Assistant - Information Management</h4>
-                    <h5>WSAudiology</h5>
-                    <p class="text-muted text-small">Lynge, Denmark</p>
-                    <p class="text-muted italic text-small">October 2023 - February 2024</p>
-                    <br>
-                    <p>Currently improving my back-end development 
-                        skill sets through my work on many EU-funded 
-                        projects such as Mine.io and CYBERUNITY. 
-                        My duties consisted of:
-                    </p>
-
-                </div>
+                <% } %>
             </div>
         </div>
         <div class="content-container" id="expertise">
-            <h3>Expertise</h3>
+            <h3><%= expertiseTitle %></h3>
             <div class="nav-links">
-                <button type="button" onclick="loadDesc('Python')">Python</button>
-                <p id="Python" class="exp-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsa laboriosam natus modi debitis enim reprehenderit libero necessitatibus rerum laborum. Error voluptate obcaecati recusandae debitis, tempore alias accusamus non sequi!</p>
-                <button type="button" onclick="loadDesc('Docker')">Docker</button>
-                <p id="Docker" class="exp-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis error aliquid tenetur fuga! In minus numquam dolorem voluptatibus ipsum distinctio culpa, tempora nisi exercitationem, quae at explicabo deleniti voluptate et!</p>
-                <button type="button" onclick="loadDesc('HTMLCSS')">HTML/CSS</button>
-                <p id="HTMLCSS" class="exp-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam ad obcaecati odio cumque doloremque non molestiae corporis officiis iusto suscipit velit vero ducimus voluptates laborum, quidem quae possimus voluptatum! Ex!</p>
-                <button type="button" onclick="loadDesc('Javascript')">Javascript</button>
-                <p id="Javascript" class="exp-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, quisquam deserunt. Corporis deleniti voluptate molestias sit sequi autem, minima ea quos aperiam veritatis impedit unde. Ipsum necessitatibus neque perspiciatis! Possimus.</p>
-                <button type="button" onclick="loadDesc('Vuejs')">Vue.js</button>
-                <p id="Vuejs" class="exp-description"></p>
-                <button type="button" onclick="loadDesc('VSCode')">VS Code</button>
-                <p id="VSCode" class="exp-description"></p>
-                <button type="button" onclick="loadDesc('Git')">Git</button>
-                <p id="Git" class="exp-description"></p>
-                <button type="button" onclick="loadDesc('Java')">Java</button>
-                <p id="Java" class="exp-description"></p>
-                <button type="button" onclick="loadDesc('C')">C</button>
-                <p id="C" class="exp-description"></p>
-                <button type="button" onclick="loadDesc('Cpp')">C++</button>
-                <p id="Cpp" class="exp-description"></p>
-                <button type="button" onclick="loadDesc('Linux')">Linux</button>
-                <p id="Linux" class="exp-description"></p>
-                <button type="button" onclick="loadDesc('BDrivingLicense')">B Driving License</button>
-                <p id="BDrivingLicense" class="exp-description"></p>
+                <% for (let exp in expertise) {%>
+                    <button type="button" onclick="loadDesc('<%= exp %>')"><%= exp %></button>
+                    <p id=<%= exp %> class="exp-description"><%= expertise[exp] %></p>
+                <% } %>
             </div>
-                <!-- <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link" id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">Python</a>
-                    <a class="nav-link" id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">Docker</a>
-                    <a class="nav-link" id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">HTML/CSS</a>
-                    <a class="nav-link" id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">Javascript</a>
-                    <a class="nav-link" id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">Vue.js</a>
-                    <a class="nav-link 
-                " id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">VS Code</a>
-                    <a class="nav-link 
-                " id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">Git</a>
-                    <a class="nav-link 
-                " id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">Java</a>
-                    <a class="nav-link 
-                " id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">C</a>
-                    <a class="nav-link 
-                " id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">C++</a>
-                    <a class="nav-link 
-                " id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">Linux</a>
-                    <a class="nav-link 
-                " id="v-pills-python-tab" data-bs-toggle="pill" href="#v-pills-python" role="tab" aria-controls="v-pills-python" aria-selected="true">B Driving License</a>
-                </div>
-                <div class="tab-content" id="v-pills-tabContent">
-                    <p class="tab-pane fade show" id="v-pills-python" role="tabpanel" aria-labelledby="v-pills-python-tab">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis aperiam accusantium facere minus totam, id cumque sequi ea harum necessitatibus animi inventore, sunt iste dicta libero consectetur ab eligendi repudiandae.</p>
-                </div> -->
         </div>
 
         <div class="content-container" id="languages">
-            <h3>Languages</h3>
+            <h3><%= languagesTitle %></h3>
             <div class="nav-links">
                 <div class="langchart">
-                    <label>Greek</label>
+                    <label><%= languages['Greek'] %></label>
                     <div class="barchart" style="margin-left: 1rem; width: 500px;"></div>
                 </div>
                 <div class="langchart">
-                    <label>English</label>
+                    <label><%= languages['English'] %></label>
                     <div class="barchart" style="margin-left: .4rem; width: 430px;"></div>
                 </div>
             </div>
         </div>
 
         <div class="content-container" id="interest">
-            <h3>Interested in me?</h3>
+            <h3><%= interestedTitle %></h3>
             <div class="content-card">
-                <h4>Contact Me</h4>
+                <h4><%= contactTitle %></h4>
                 <h5></h5>
                 <p><i class="fas fa-phone"></i> +30-6978496068</p>
                 <p><i class="fas fa-envelope"></i> antivasisp@gmail.com</p>
                 <br>
-                <p>Bored copying & pasting my email?</p>
-                <a href="/send_email"class="btn-link">Send me an email directly.</a>
+                <p><%= contactSub %></p>
+                <a href="/send_email"class="btn-link"><%= contactAnc %></a>
                 <!-- <button type="button" class="btn-link" onclick="document.getElementById('myForm').style.display = 'block'">Send me an email directly.</button> -->
             </div>
         </div>

@@ -20,7 +20,10 @@ const lorem = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisqua
 var selected = null;
 
 function loadDesc(id){
+    id = id.split(" ")[0];
+    console.log(id);
     const expertiseDescription = document.getElementById(id);
+    console.log(expertiseDescription);
     if(!selected){
         selected = id;
         expertiseDescription.classList.toggle('active');//.style.display = 'flex';
@@ -40,4 +43,17 @@ function acceptCookies(cookies){
         // TODO code that holds cookies
     }
     document.getElementById('cookies-popup').style.display = 'none';
+}
+
+function toggleLang(){
+    const html = document.getElementsByTagName("html")[0];
+    const langImg = document.getElementById("lang-img");
+
+    if(html.lang === "en"){
+        html.lang = "gr";
+        langImg.src = "images/uk-flag.png";
+    } else {
+        html.lang = "en";
+        langImg.src = "images/greek-flag.png";
+    }
 }

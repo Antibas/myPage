@@ -13,15 +13,12 @@
         <form action="/send_email" method="post" class="form-container">
             <div class="popup-header">
                 <a href="/" class="back-btn"><i class="fa-regular fa-circle-left"></i></a>
-                <!-- <button type="button" class="cancel" onclick="document.getElementById('myForm').style.display = 'none'">X</button> -->
                 <h1>Send Email</h1>
             </div>
       
             <input type="email" placeholder="Email address" name="email" required>
-      
-            <input type="text" placeholder="Subject" name="subj" required>
-
-            <textarea name="msg" placeholder="Message" rows="7" required></textarea>
+            <input type="text" placeholder="Subject" name="subject" required>
+            <textarea name="message" placeholder="Message" rows="7" required></textarea>
             
             <input type="submit" value="Send" class="primary">
         </form>
