@@ -39,21 +39,17 @@ function loadDesc(id){
 }
 
 function checkForCookies(){
-    fetch("/has_cookies")
-    .then(response => {
-        if(response.ok){
-            document.getElementById('cookies-popup').classList.toggle('active')
-        }
-    })
+    console.log(document.cookie)
+    if(!document.cookie){
+        document.getElementById('cookies-popup').classList.toggle('active')
+    }
 }
 
 function acceptCookies(cookies){
-    if(cookies){
-        fetch("/accept_cookies")
-        .then(response => {
-            console.log(response);
-        });
-    }
+    fetch(`/accept_cookies?accept='${cookies}'`)
+    .then(response => {
+        console.log(response);
+    });
     document.getElementById('cookies-popup').style.display = 'none';
 }
 

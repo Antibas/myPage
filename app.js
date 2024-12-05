@@ -9,18 +9,26 @@ function loadPage(req, res, page="index"){
     if("lang" in req.query){
         lang = req.query['lang'];
     }
-    if(lang == 'en'){
-        fs.readFile('public/english.json', (err, data) => {
-            if(err) throw err;
-            res.render(page, JSON.parse(data));
-        });
-    } else if(lang == 'gr') {
-        fs.readFile('public/greek.json', (err, data) => {
-            if(err) throw err;
-            res.render(page, JSON.parse(data));
-        });
-    } else {
-    }
+
+    var file = "public/"+((lang == 'gr')?"greek.json":"english.json");
+    fs.readFile(file, (err, data) => {
+        if(err) throw err;
+        res.render(page, JSON.parse(data));
+    });
+    // if(lang == 'en'){
+    //     fs.readFile('public/english.json', (err, data) => {
+    //         if(err) throw err;
+    //         res.render(page, JSON.parse(data), (err, html) => {
+
+    //         });
+    //     });
+    // } else if(lang == 'gr') {
+    //     fs.readFile('public/greek.json', (err, data) => {
+    //         if(err) throw err;
+    //         res.render(page, JSON.parse(data));
+    //     });
+    // } else {
+    // }
 }
 
 const app = express();
@@ -49,15 +57,15 @@ app.post("/send_email", (req, res) => {
 });
 
 app.get("/accept_cookies", (req, res) => {
-    cookiesAccepted = true;
-    res.cookie('cookiesAccepted', true, { maxAge: 3600000, httpOnly: true });
-    console.log(req)
-    res.write("Cookies have been accepted.");
+    var accept = req.query["accept"]
+    res.cookie('cookiesAccepted', accept, { maxAge: 3600000, httpOnly: true });
+    console.log(accept)
+    loadPage(req, res, "index");
 });
 
 app.get("/has_cookies", (req, res) => {
     // res.cookie('cookiesAccepted', true, { maxAge: 3600000, httpOnly: true });
-    if((!res.cookies) || 'cookiesAccepted' in res.cookies)
+    if(!(res.cookies) || !('cookiesAccepted' in res.cookies))
         res.sendStatus(200);
     else
         res.sendStatus(400);
