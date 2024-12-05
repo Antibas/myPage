@@ -1,0 +1,71 @@
+{
+    "lang": "gr",
+    "name": "Παναγιωτης Αντιβάσης",
+    "jobtitle": "Παραγωγός Λογισμικού",
+    "aboutmeTitle": "Εγώ",
+    "aboutme": "μπλαμπαλμσαφσδγφδφγφδγφδηγ",
+    "educationTitle": "Σπουδές",
+    "education": [
+        {
+            "title": "Μεταπτυχιακό στο τμήμα Μηχανικών Πληροφορικής",
+            "institution": "Ελληνικό Μεσογειακό Πανεπιστήμιο",
+            "time": "Οκτώβριος 2024 - Τώρα",
+            "description": "μπλαμπαλμσαφσδγφδφ γφδγφδηγμπλαμπ αλμσαφσδγφδφγφδγφδηγμπλαμπαλμσαφσδγφδ φγφδγφδηγμπλ αμπαλμσαφσδγ φδφγφδγφδηγμπλαμπαλμ σαφσδγφδφγφδγφδηγ"
+        },
+        {
+            "title": "Πτυχίο στην Επιστήμη Υπολογιστών",
+            "institution": "Πανεπιστήμιο Κρήτης",
+            "time": "Σεπτέμβριος 2016 - Ιούλιος 2022",
+            "description": "μπλαμπαλμσαφσδγφδφ γφδγφδηγμπλαμπαλμσαφσδγφδφγφδγ φδηγμπλαμπαλμσαφσδγφδφγφδγ φδηγμπλαμπαλμσαφσδγφδφγφδγφδη γμπλαμπαλμσαφσδγφδφγφδγφδηγ"
+        }
+    ],
+    "experienceTitle": "Προϋπηρεσία",
+    "experience": [
+        {
+            "jobtitle": "Παραγωγός Λογισμικού",
+            "company": "Pasiphae Lab",
+            "location": "Ηράκλειο, Κρήτης",
+            "time": "Μάιος 2024 - Now",
+            "description": "μπλαμπαλμσαφσδγφδφγφδγφδηγμ πλαμπαλμσαφσδγφδφγφδγφ δηγμπλαμπαλμσαφσδγφδφγφδγφ δηγμπλαμπα λμσαφ σδγφδφγφδγφδηγμπλ αμπαλμσαφσδγφδφγφδγφδηγ"
+        },
+        {
+            "jobtitle": "Βοηθός Διαχείρησης Πληροφοριών",
+            "company": "WSAudiology",
+            "location": "Lynge, Δανία",
+            "time": "Οκτώβριος 2023 - Φεβρουάριος 2024",
+            "description": "μπλαμπαλμσαφσδγ φδφγφδγφδηγμπλ αμπαλμσαφσδγφδφ γφδγφδηγμπλαμπαλμσαφσδγφδφγ φδγφδηγμπλαμπαλμσαφσδγφ δφγφδγφδηγμπλα μπαλμσαφσ δγφδφγφδγφδηγ"
+        }
+    ],
+    "expertiseTitle": "Γνώσεις",
+    "expertise": {
+        "Python": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsa laboriosam natus modi debitis enim reprehenderit libero necessitatibus rerum laborum. Error voluptate obcaecati recusandae debitis, tempore alias accusamus non sequi!",
+        "Docker": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis error aliquid tenetur fuga! In minus numquam dolorem voluptatibus ipsum distinctio culpa, tempora nisi exercitationem, quae at explicabo deleniti voluptate et!",
+        "HTML/CSS": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam ad obcaecati odio cumque doloremque non molestiae corporis officiis iusto suscipit velit vero ducimus voluptates laborum, quidem quae possimus voluptatum! Ex!",
+        "Javascript": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, quisquam deserunt. Corporis deleniti voluptate molestias sit sequi autem, minima ea quos aperiam veritatis impedit unde. Ipsum necessitatibus neque perspiciatis! Possimus.",
+        "Vue.js": "lorem",
+        "VS Code": "lorem",
+        "Git": "lorem",
+        "Java": "lorem",
+        "C": "lorem",
+        "C++": "lorem",
+        "Linux": "lorem",
+        "B Driving License": "lorem"
+    },
+    "languagesTitle": "Γλώσσες",
+    "languages": {
+        "Greek": "Ελληνικά",
+        "English": "Αγγλικά"
+    },
+    "interestedTitle": "Ενδιαφέρεστε;",
+    "contactTitle": "Επικοινωνήστε μαζί μου",
+    "contactSub": "Εναλλακτικά:",
+    "contactAnc": "Στείλτε μου απευθείας email.",
+    "cookieTitle": "Αποδοχή των Cookies",
+    "cookieDisclaimer": "μπλαμπαλμσαφσδγφδφγφδγφδηγμ πλαμπαλμσαφσδγφδφγφδγφ δηγμπλαμπαλμσαφσδγφδφγφδγφ δηγμπλαμπα λμσαφ σδγφδφγφδγφδηγμπλ αμπαλμσαφσδγφδφγφδγφδηγ",
+
+    "emailTitle": "Στείλτε Email",
+    "emailPlaceholder": "Διεύθυνση Email",
+    "subjectPlaceholder": "Θέμα",
+    "messagePlaceholder": "Μύνημα",
+    "sendValue": "Στείλτε"
+}

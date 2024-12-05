@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="css/style.css">
     <title><%= name %></title>
 </head>
-<body onload="document.getElementById('cookies-popup').classList.toggle('active')">
+<body onload="checkForCookies()">
+    <% if(lang=='en') { %>
+        <a href="/?lang=gr" class="language-btn">
+            <img src="images/greek-flag.png" alt="lang" id="lang-img">
+        </a>
+    <% } else { %>
+        <a href="/" class="language-btn">
+            <img src="images/uk-flag.png" alt="lang" id="lang-img">
+        </a>
+    <% } %>
     <header>
         <div class="text-header">
             <h1><%= name %></h1>
@@ -20,14 +29,7 @@
                 <a href="https://www.instagram.com/_antibas/" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://stackoverflow.com/users/14463603/%ce%a0%ce%91%ce%9d%ce%91%ce%93%ce%99%ce%a9%ce%a4%ce%97%ce%a3-%ce%91%ce%9d%ce%a4%ce%99%ce%92%ce%91%ce%a3%ce%97%ce%a3" target="_blank"><i class="fab fa-stack-overflow"></i></a>
             </nav>
-            <div class="btn-group">
-                <button type="button" class="language-btn" onclick="toggleLang()">
-                    <!-- <img src="images/uk-flag.png" alt="En"> -->
-                    <img src="images/greek-flag.png" alt="lang" id="lang-img">
-                </button>
-            </div>
         </div>
-        
         <img src="images/Myphoto.jpg" alt="My Photo">
     </header>
      <main>
@@ -102,7 +104,7 @@
                 <p><i class="fas fa-envelope"></i> antivasisp@gmail.com</p>
                 <br>
                 <p><%= contactSub %></p>
-                <a href="/send_email"class="btn-link"><%= contactAnc %></a>
+                <a href="/send_email?lang=<%= lang %>"class="btn-link"><%= contactAnc %></a>
                 <!-- <button type="button" class="btn-link" onclick="document.getElementById('myForm').style.display = 'block'">Send me an email directly.</button> -->
             </div>
         </div>
@@ -143,8 +145,8 @@
         <p class="text-muted text-small">&copy; Copyright. All rights reserved.</p>
      </footer>
      <div id="cookies-popup">
-        <h3>Accept Cookies</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptatem molestiae, quaerat facere quo soluta perferendis vero, neque assumenda nulla at, harum esse consequuntur veniam voluptatibus distinctio? Sunt, quod blanditiis!</p>
+        <h3><%= cookieTitle %></h3>
+        <p><%= cookieDisclaimer %></p>
         <br>
         <button type="button" onclick="acceptCookies(true)" class="secondary">Accept</button>
         <button type="button" onclick="acceptCookies(false)" class="cancel">Reject</button>

@@ -38,22 +38,34 @@ function loadDesc(id){
     }
 }
 
+function checkForCookies(){
+    fetch("/has_cookies")
+    .then(response => {
+        if(response.ok){
+            document.getElementById('cookies-popup').classList.toggle('active')
+        }
+    })
+}
+
 function acceptCookies(cookies){
     if(cookies){
-        // TODO code that holds cookies
+        fetch("/accept_cookies")
+        .then(response => {
+            console.log(response);
+        });
     }
     document.getElementById('cookies-popup').style.display = 'none';
 }
 
-function toggleLang(){
-    const html = document.getElementsByTagName("html")[0];
-    const langImg = document.getElementById("lang-img");
+// function toggleLang(){
+//     const html = document.getElementsByTagName("html")[0];
+//     const langImg = document.getElementById("lang-img");
 
-    if(html.lang === "en"){
-        html.lang = "gr";
-        langImg.src = "images/uk-flag.png";
-    } else {
-        html.lang = "en";
-        langImg.src = "images/greek-flag.png";
-    }
-}
+//     if(html.lang === "en"){
+//         // html.lang = "gr";
+//         langImg.src = "images/uk-flag.png";
+//     } else {
+//         // html.lang = "en";
+//         langImg.src = "images/greek-flag.png";
+//     }
+// }
