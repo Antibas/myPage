@@ -1,5 +1,4 @@
 const lorem = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam corporis obcaecati architecto reiciendis sit nesciunt labore, velit at, magnam tenetur esse fugiat, laudantium optio quas sapiente distinctio. Quaerat, quos accusantium."
-
 // const expetises = {
 //     Python: lorem,
 //     Docker: lorem,
@@ -46,7 +45,14 @@ function checkForCookies(){
 }
 
 function acceptCookies(cookies){
-    fetch(`/accept_cookies?accept='${cookies}'`)
+    fetch(`/cookies`, {
+        method: "POST", 
+        headers: {
+            'Content-Type':'application/json',
+            'Accept':'application/json'
+        },
+        body: JSON.stringify({accepted: cookies})
+    })
     .then(response => {
         console.log(response);
     });

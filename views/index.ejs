@@ -100,11 +100,15 @@
             <div class="content-card">
                 <h4><%= contactTitle %></h4>
                 <h5></h5>
-                <p><i class="fas fa-phone"></i> +30-6978496068</p>
-                <p><i class="fas fa-envelope"></i> antivasisp@gmail.com</p>
+                <button type="button" class="btn-link" onclick="myFunction()" onmouseout="outFunc()">
+                    <span class="tooltiptext" id="myTooltip">Copy to clipboard</span> 
+                    <i class="fas fa-phone"></i>
+                    +30-6978496068
+                </button>
+                <p><i class="fas fa-envelope" onclick="navigator.clipboard.writeText('antivasisp@gmail.com')"></i> antivasisp@gmail.com</p>
                 <br>
                 <p><%= contactSub %></p>
-                <a href="/send_email?lang=<%= lang %>"class="btn-link"><%= contactAnc %></a>
+                <a href="/email?lang=<%= lang %>"class="btn-link"><%= contactAnc %></a>
                 <!-- <button type="button" class="btn-link" onclick="document.getElementById('myForm').style.display = 'block'">Send me an email directly.</button> -->
             </div>
         </div>
@@ -148,12 +152,25 @@
         <h3><%= cookieTitle %></h3>
         <p><%= cookieDisclaimer %></p>
         <br>
-        <!-- <button type="button" onclick="acceptCookies(true)" class="secondary">Accept</button>
-        <button type="button" onclick="acceptCookies(false)" class="cancel">Reject</button> -->
-        <a href="/accept_cookies?accept=true">Accept</a>
-        <a href="/accept_cookies?accept=false">Reject</a>
+        <button type="button" onclick="acceptCookies(true)" class="secondary">Accept</button>
+        <button type="button" onclick="acceptCookies(false)" class="cancel">Reject</button>
+        <!-- <a href="/accept_cookies?accept=true">Accept</a>
+        <a href="/accept_cookies?accept=false">Reject</a> -->
     </div>
     <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
-      <script src="js/script.js"></script>
+    <script>
+        function myFunction() {
+          navigator.clipboard.writeText("+30-6978496068");
+          
+          var tooltip = document.getElementById("myTooltip");
+          tooltip.innerHTML = "Copied!";
+        }
+        
+        function outFunc() {
+          var tooltip = document.getElementById("myTooltip");
+          tooltip.innerHTML = "Copy to clipboard";
+        }
+    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
